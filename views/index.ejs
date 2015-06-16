@@ -17,4 +17,11 @@
     <input type="submit" value="Speak!" disabled="disabled" />
   </form>
   </body>
+ <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+ <script type="text/javascript">
+    var socket = io.connect('http://localhost:3000/');
+    socket.on('connected', function(){
+      alert("connected")
+    })
+ </script> 
 </html>

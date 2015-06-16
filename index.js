@@ -21,3 +21,9 @@ app.use('/', router);
 router.get('/', function(req, res){
   res.render('index', {header: 'index'})
 })
+
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function(socket){
+  socket.emit('connected')
+})
